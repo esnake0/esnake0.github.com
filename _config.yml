@@ -3,11 +3,11 @@
 # ----------------------- #
 
 url: http://esnake0.github.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+title: esnake0's Blog
+subtitle: Thoughts, Ideas, My point of view.
+author: esnake0
 simple_search: http://google.com/search
-description:
+description:  This is a blog of esnake0.
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
