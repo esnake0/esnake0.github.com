@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Xcode,Test,iOS,XCTest," />
 
 
 
@@ -80,15 +80,22 @@
 
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Universe Of Esnake0">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="前言从事iOS App测试工作已经快两年了，一直想要总结下工作过程和技术。趁最近手头项目不紧，学习梳理下在Xcode中进行iOS自动化测试的知识。
+作者保留所有权利，转载请先联系获取授权，邮件esnake0@163.com
+为什么用Xcode?1.由于iOS平台特殊的生态环境，Apple公司对于iOS开发系统采取了非常封闭的策略，因此在开发和测试过程中，使用官方开发工具和组件可以避免折腾，将注意力">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Test With Xcode Part-0">
+<meta property="og:url" content="http://yoursite.com/2016/04/19/Test-With-Xcode-Part0/index.html">
 <meta property="og:site_name" content="Universe Of Esnake0">
-<meta property="og:description">
+<meta property="og:description" content="前言从事iOS App测试工作已经快两年了，一直想要总结下工作过程和技术。趁最近手头项目不紧，学习梳理下在Xcode中进行iOS自动化测试的知识。
+作者保留所有权利，转载请先联系获取授权，邮件esnake0@163.com
+为什么用Xcode?1.由于iOS平台特殊的生态环境，Apple公司对于iOS开发系统采取了非常封闭的策略，因此在开发和测试过程中，使用官方开发工具和组件可以避免折腾，将注意力">
+<meta property="og:updated_time" content="2016-04-19T09:40:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Universe Of Esnake0">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Test With Xcode Part-0">
+<meta name="twitter:description" content="前言从事iOS App测试工作已经快两年了，一直想要总结下工作过程和技术。趁最近手头项目不紧，学习梳理下在Xcode中进行iOS自动化测试的知识。
+作者保留所有权利，转载请先联系获取授权，邮件esnake0@163.com
+为什么用Xcode?1.由于iOS平台特殊的生态环境，Apple公司对于iOS开发系统采取了非常封闭的策略，因此在开发和测试过程中，使用官方开发工具和组件可以避免折腾，将注意力">
 
 
 
@@ -106,7 +113,7 @@
   };
 </script>
 
-  <title> Universe Of Esnake0 </title>
+  <title> Test With Xcode Part-0 | Universe Of Esnake0 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -127,9 +134,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -206,9 +211,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -228,10 +233,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/04/19/Test-With-Xcode-Part0/" itemprop="url">
-                  Test With Xcode Part-0
-                </a>
+                Test With Xcode Part-0
               
             
           </h1>
@@ -278,9 +280,7 @@
       
 
       
-        
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>从事iOS App测试工作已经快两年了，一直想要总结下工作过程和技术。<br>趁最近手头项目不紧，学习梳理下在Xcode中进行iOS自动化测试的知识。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>从事iOS App测试工作已经快两年了，一直想要总结下工作过程和技术。<br>趁最近手头项目不紧，学习梳理下在Xcode中进行iOS自动化测试的知识。</p>
 <p><em>作者保留所有权利，转载请先联系获取授权，邮件esnake0@163.com</em></p>
 <h2 id="为什么用Xcode"><a href="#为什么用Xcode" class="headerlink" title="为什么用Xcode?"></a>为什么用Xcode?</h2><p>1.由于iOS平台特殊的生态环境，Apple公司对于iOS开发系统采取了非常封闭的策略，因此在开发和测试过程中，使用官方开发工具和组件可以避免折腾，将注意力集中到开发测试过程本身。</p>
 <p>2.目前流行的第三方自动化测试框架，要么是对Apple官方提供的UI automator进行扩展，如TuneupJs, 要么是直接使用UI Automation作为底层驱动， 如Appium, 淘宝的athrun等。当然像KIF这种直接使用私有API的框架也是存在的，但是资源和文档很少，在国内使用它的团队就更少了。<br>我们来看看UI Automation的官方文档Instruments User Guide中Automate UI Testing in iOS：</p>
@@ -296,251 +296,86 @@ Xcode 7 provides support for user interface testing and recording. Investigate t
 <li>Xcode包含了一个将具有OCUnit tests的工程迁移到XCTest tests的迁移器</li>
 </ul>
 
-          
-        
       
     </div>
     
     <div>
       
+        
+      
     </div>
 
     <div>
+      
+        
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/18/Markdown-0/" itemprop="url">
-                  Markdown Basics
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-18T11:51:19+08:00" content="2016-04-18">
-              2016-04-18
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/Xcode/" rel="tag">#Xcode</a>
           
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/18/Markdown-0/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/18/Markdown-0/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
+            <a href="/tags/Test/" rel="tag">#Test</a>
           
-
+            <a href="/tags/iOS/" rel="tag">#iOS</a>
           
-
-          
-          
-
+            <a href="/tags/XCTest/" rel="tag">#XCTest</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Markdown语言的基础学习笔记。</p>
-<p><a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">原文链接</a></p>
-<p>Markdown这个词有两个概念：<br>1.一种格式化纯文本的语言.<br>2.一个软件工具，由Perl实现，将纯文本转化为HTML.<br>//Dingus 这个web 应用可以让你键入自己的Markdown格式文本，将其翻译为XHTML</p>
-<h1 id="段落，标题，引用"><a href="#段落，标题，引用" class="headerlink" title="段落，标题，引用"></a>段落，标题，引用</h1><p>段落只是简单的由1行或多行连贯文本组成，被一个或多个空行分隔。空行可包含空格和tabs, 通常段落不应被空格或tabs缩进.</p>
-<p>Markdown 提供两种风格的标题：Setext和atx.</p>
-<p>Setext风格的标题<code>&lt;h1&gt;</code>和&lt;<code>&lt;h2&gt;</code>分别由=和短横线-在文本下划实现。</p>
-<p>例如</p>
-<pre><code>A First Level Header
-====================
-A Seconde Level Header
-----------------------
-</code></pre><p>效果为：</p>
-<h1 id="A-First-Level-Header"><a href="#A-First-Level-Header" class="headerlink" title="A First Level Header"></a>A First Level Header</h1><h2 id="A-Seconde-Level-Header"><a href="#A-Seconde-Level-Header" class="headerlink" title="A Seconde Level Header"></a>A Seconde Level Header</h2><p>atx风格的标题由在行前添加1-6个#来实现，#的个数代表了HTML结果中标题的层级</p>
-<pre><code>### Header 3
-</code></pre><p>显示效果为</p>
-<h3 id="Header-3"><a href="#Header-3" class="headerlink" title="Header 3"></a>Header 3</h3><h1 id="斜体和加粗"><a href="#斜体和加粗" class="headerlink" title="斜体和加粗"></a>斜体和加粗</h1><p>Markdown使用星号和下划线来标注强调<br>Markdown:</p>
-<pre><code>Some of these words *are emphasized*.
-Some of these words _are emphasized also_.
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/18/Markdown-0/" rel="next" title="Markdown Basics">
+                <i class="fa fa-chevron-left"></i> Markdown Basics
+              </a>
+            
+          </div>
 
-Use two asterisks for **strong emphasis**.
-Or, if you prefer, __use two underscores instead__.
-</code></pre><p>Output:</p>
-<pre><code>&lt;p&gt;Some of these words &lt;em&gt;are emphasized&lt;/em&gt;.
-Some of these words &lt;em&gt;are emphasized also&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Use two asterisks for &lt;strong&gt;strong emphasis&lt;/strong&gt;.
-Or, if you prefer, &lt;strong&gt;use two underscores instead&lt;/strong&gt;.&lt;/p&gt;
-</code></pre><h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><p>无序列表使用<code>* + -</code>来标注</p>
-<pre><code>*Candy.
-*Gum.
-*Booze.
-</code></pre><p>和</p>
-<pre><code>+Candy.
-+Gum.
-+Booze.
-</code></pre><p>和</p>
-<pre><code>-Candy.
--Gum.
--Booze.
-</code></pre><p>输出一样的结果：</p>
-<p>Candy.<br>Gum.<br>Booze.</p>
-<p>有序列表使用数字和.作为标识</p>
-<pre><code>1.Red
-2.Green
-3.Blue
-</code></pre><p>输出:</p>
-<ol>
-<li>Red</li>
-<li>Green</li>
-<li>Blue</li>
-</ol>
-<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p>Markdown支持两种创建链接的方式：inline和reference<br>Inline </p>
-<pre><code>This is an [example link](http://example.com/).
-Output:
-
-&lt;p&gt;This is an &lt;a href=&quot;http://example.com/&quot;&gt;
-example link&lt;/a&gt;.&lt;/p&gt;
-</code></pre><p>可选的，你也可以在括号内加入标题属性</p>
-<pre><code>This is an [example link](http://example.com/ &quot;With a Title&quot;).
-</code></pre><p>输出:</p>
-<pre><code>&lt;p&gt;This is an &lt;a href=&quot;http://example.com/&quot; title=&quot;With a Title&quot;&gt;
-example link&lt;/a&gt;.&lt;/p&gt;
-</code></pre><p>Reference风格的链接允许你通过名称来引用你的链接，只要在文档的其他地方定义就行。</p>
-<pre><code>I get 10 times more traffic from [Google][1] than from
-[Yahoo][2] or [MSN][3].
-
-[1]: http://google.com/        &quot;Google&quot;
-[2]: http://search.yahoo.com/  &quot;Yahoo Search&quot;
-[3]: http://search.msn.com/    &quot;MSN Search&quot;
-</code></pre><p>输出:</p>
-<pre><code>&lt;p&gt;I get 10 times more traffic from &lt;a href=&quot;http://google.com/&quot;
-title=&quot;Google&quot;&gt;Google&lt;/a&gt; than from &lt;a href=&quot;http://search.yahoo.com/&quot;
-title=&quot;Yahoo Search&quot;&gt;Yahoo&lt;/a&gt; or &lt;a href=&quot;http://search.msn.com/&quot;
-title=&quot;MSN Search&quot;&gt;MSN&lt;/a&gt;.&lt;/p&gt;
-</code></pre><p>标题属性是可选的，链接可包含字母，数字和空格，大小写不敏感</p>
-<pre><code>I start my morning with a cup of coffee and
-[The New York Times][NY Times].
-[ny times]: http://www.nytimes.com/
-</code></pre><p>Output:</p>
-<pre><code>&lt;p&gt;I start my morning with a cup of coffee and
-&lt;a href=&quot;http://www.nytimes.com/&quot;&gt;The New York Times&lt;/a&gt;.&lt;/p&gt;
-</code></pre><h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><p>图片语法类似于链接<br>Inline-style(title可选）：</p>
-<pre><code>![alt text](/path/to/img.jpg &quot;Title&quot;)
-</code></pre><p>Reference-style:</p>
-<pre><code>![alt text][id]
-[id]: /path/to/img.jpg &quot;Title&quot;
-</code></pre><p>以上两个例子生成同样的输出：</p>
-<pre><code>&lt;img src=&quot;/path/to/img.jpg&quot; alt=&quot;alt text&quot; title=&quot;Title&quot; /&gt;
-</code></pre><p>代码<br>在普通段落中，可用反引号包裹住代码引用。&amp;, &lt;和&gt;会自动转义成HTML实体。</p>
-<pre><code>I strongly recommend against using any `&lt;blink&gt;` tags.
-I wish SmartyPants used named entities like `&amp;mdash;`
-instead of decimal-encoded entites like `&amp;#8212;`.
-</code></pre><p>Output:</p>
-<pre><code>&lt;p&gt;I strongly recommend against using any
-
-&lt;code&gt;&amp;lt;blink&amp;gt;&lt;/code&gt; tags.&lt;/p&gt;
-
-&lt;p&gt;I wish SmartyPants used named entities like
-&lt;code&gt;&amp;amp;mdash;&lt;/code&gt; instead of decimal-encoded
-entites like &lt;code&gt;&amp;amp;#8212;&lt;/code&gt;.&lt;/p&gt;
-</code></pre><p>如果需要列举一整块预格式过的代码，将每行进行4个空格的缩进(一个tab)</p>
-<p>Markdown:</p>
-<pre><code>If you want your page to validate under XHTML 1.0 Strict,
-you&apos;ve got to put paragraph tags in your blockquotes:
-    &lt;blockquote&gt;
-    &lt;p&gt;For example.&lt;/p&gt;
-    &lt;/blockquote&gt;
-</code></pre><p>Output:</p>
-<pre><code>&lt;p&gt;If you want your page to validate under XHTML 1.0 Strict,
-you&apos;ve got to put paragraph tags in your blockquotes:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;blockquote&amp;gt;
-    &amp;lt;p&amp;gt;For example.&amp;lt;/p&amp;gt;
-&amp;lt;/blockquote&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-</code></pre>
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -548,6 +383,14 @@ you&apos;ve got to put paragraph tags in your blockquotes:&lt;/p&gt;
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/19/Test-With-Xcode-Part0/"
+           data-title="Test With Xcode Part-0" data-url="http://yoursite.com/2016/04/19/Test-With-Xcode-Part0/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -567,8 +410,17 @@ you&apos;ve got to put paragraph tags in your blockquotes:&lt;/p&gt;
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/default_avatar.jpg"
@@ -644,6 +496,17 @@ you&apos;ve got to put paragraph tags in your blockquotes:&lt;/p&gt;
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么用Xcode"><span class="nav-number">2.</span> <span class="nav-text">为什么用Xcode?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于XCTest和Xcode"><span class="nav-number">3.</span> <span class="nav-text">关于XCTest和Xcode</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -740,6 +603,10 @@ you&apos;ve got to put paragraph tags in your blockquotes:&lt;/p&gt;
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
