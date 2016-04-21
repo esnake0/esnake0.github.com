@@ -90,7 +90,7 @@
 <meta property="og:description" content="前言从事iOS App测试工作已经快两年了，一直想要总结下工作过程和技术。趁最近手头项目不紧，学习梳理下在Xcode中进行iOS自动化测试的知识。
 作者保留所有权利，转载请先联系获取授权，邮件esnake0@163.com
 为什么用Xcode?1.由于iOS平台特殊的生态环境，Apple公司对于iOS开发系统采取了非常封闭的策略，因此在开发和测试过程中，使用官方开发工具和组件可以避免折腾，将注意力">
-<meta property="og:updated_time" content="2016-04-19T09:40:02.000Z">
+<meta property="og:updated_time" content="2016-04-19T09:48:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Test With Xcode Part-0">
 <meta name="twitter:description" content="前言从事iOS App测试工作已经快两年了，一直想要总结下工作过程和技术。趁最近手头项目不紧，学习梳理下在Xcode中进行iOS自动化测试的知识。
@@ -286,7 +286,7 @@
 <p>2.目前流行的第三方自动化测试框架，要么是对Apple官方提供的UI automator进行扩展，如TuneupJs, 要么是直接使用UI Automation作为底层驱动， 如Appium, 淘宝的athrun等。当然像KIF这种直接使用私有API的框架也是存在的，但是资源和文档很少，在国内使用它的团队就更少了。<br>我们来看看UI Automation的官方文档Instruments User Guide中Automate UI Testing in iOS：</p>
 <pre><code>Important
 Xcode 7 provides support for user interface testing and recording. Investigate this functionality and see if it will work for your needs before conducting UI testing in Instruments. For information about user interface testing in Xcode, see Testing with Xcode.
-</code></pre><p>在Xcode7退出后Apple官方是推荐使用XCTest代替UI Automation来进行UI自动化测试的。<br>3.对于iOS App测试工程师来说，在实现了UI自动化测试后，下一个目标就是集成测试和单元测试。因此对于项目源码的阅读能力，和对于App结构的理解是必要的。XCTest框架内置于Xcode，采用Obj-c和Swift这两种与测试目标相同的开发语言，对于单元测试和性能测试已经具有很好的支持，值得深入学习研究。</p>
+</code></pre><p>在Xcode7推出后Apple官方是推荐使用XCTest代替UI Automation来进行UI自动化测试的。<br>3.对于iOS App测试工程师来说，在实现了UI自动化测试后，下一个目标就是集成测试和单元测试。因此对于项目源码的阅读能力，和对于App结构的理解是必要的。XCTest框架内置于Xcode，采用Obj-c和Swift这两种与测试目标相同的开发语言，对于单元测试和性能测试已经具有很好的支持，值得深入学习研究。</p>
 <h2 id="关于XCTest和Xcode"><a href="#关于XCTest和Xcode" class="headerlink" title="关于XCTest和Xcode"></a>关于XCTest和Xcode</h2><p>在Xcode中，XCTest会自动链接所有新的测试目标(test target)</p>
 <ul>
 <li>快速开始， 从XCTest在Xcode5中被引入之初，为测试而配置工程的整个流程已经被简化和自动化了，在test navigator中可以很容易的启用和运行测试</li>
@@ -483,7 +483,7 @@ Xcode 7 provides support for user interface testing and recording. Investigate t
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://blog.cnvip.hk" title="建均笔记" target="_blank">建均笔记</a>
+                  <a href="http://www.wujianjun.org" title="建均笔记" target="_blank">建均笔记</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
