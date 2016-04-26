@@ -229,6 +229,144 @@
             
               
                 
+                <a class="post-title-link" href="/2016/04/26/UITestFirstSight/" itemprop="url">
+                  Test With Xcode Part-1:UI Test First Sight
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-26T11:46:39+08:00" content="2016-04-26">
+              2016-04-26
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/26/UITestFirstSight/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/26/UITestFirstSight/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p> 测试让你能够定位并和应用的用户界面交互，以验证UI元素的属性和状态。</p>
+<p>UI测试包括UI录制，能够生成代码，像实际操作的那样去操作应用的界面元素，这些代码也可以扩展实现成为真正的UI测试.</p>
+<p>UI测试基于两项核心技术： XCTest框架和Accessibility</p>
+<ul>
+<li><p>XCTest 提供了一个集成在XCode内的UI测试框架， 创建和使用UI测试与使用XCTest进行单元测试的流程类似。创建一个UI test target, 创建一个UI test classes和UI test methods作为项目的一部分。使用XCTest断言来验证期望的输出是否正确。也可通过Xcode server和xocdebuild来实现持续集成。XCTest同时兼容Obe-c和Swift.</p>
+</li>
+<li><p>Accessibility作为一项核心技术，可以让残疾用户在iOS和OS X系统上得到和其他用户同样丰富的体验。它包括一套关于UI的丰富的语义数据集（rich sef of semantic data)，可用于在应用中引导用户。Accessibility在UIKit 和AppKit中都集成了，并且包含了供外部调用的API. UI test使用这些数据来实现功能。</p>
+</li>
+</ul>
+<p>UI测试通过查询找到应用的UI对象，生成事件并将事件发送给UI对象，并且提供了一套丰富的API用于检查UI对象属性和状态。</p>
+<p>Requirements</p>
+<ul>
+<li>Xcode 7</li>
+<li>OS X 10.11 EI Capitan or later</li>
+<li>iOS 设备的开发者功能已启用并连接到一个可信任的主机</li>
+<li>OS X 需要授权一个特别的 Xcode Helper app, 这会在你首次使用UI test的时候自动弹出</li>
+</ul>
+<p>APIs</p>
+<ul>
+<li>XCUIApplication</li>
+<li>XCUIElement</li>
+<li>XCUIElementQuery</li>
+</ul>
+<p>UI测试包括几个基本步骤：</p>
+<ol>
+<li>查询找到UI元素</li>
+<li>了解这个元素的期望行为</li>
+<li>对元素进行操作以获取响应</li>
+<li>判断响应是否符合期望结果， 测试pass/fail</li>
+</ol>
+<p>以上是Apple<a href="https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/testing_with_xcode/RevisionHistory.html#//apple_ref/doc/uid/TP40014132-CH12-SW1" target="_blank" rel="external">官方文档</a>中关于使用XCT进行UI测试的所有内容了(截止本文发布时，官方文档最近更新时间为2016-03-21, Updated for Xcode 7.3.)</p>
+<p>尝试查找API手册，结果是这样的发现相关类的说明文档缺失，链接为灰色</p>
+<p>没办法，那就直接从Xcode中去实际用用看.</p>
+<p>在Xcode里面新建一个工程ButtonTest，选择Single View Application, 创建的同时勾选上Include UI Test<br>完成创建后，在Project Navigator里面是这样的：</p>
+<p>然后我们在Main.storyboard里面添加一个button, 并不用实现任何代码，可直接编译通过。<br>为了避免自动布局带来的问题，直接把storyboard中设置为使用4.7寸屏，模拟器也使用iPhone5s。<br>然后在Test Navigator中，直接运行ButtonTestUITest, 测试结果为PASS（因为还未实现任何测试）</p>
+<p>来仔细看看示例测试代码</p>
+<p>按照官方文档所推荐的那样，我们来试试点击开始使用录制功能。<br>点击录制后，模拟器启动，进入应用主界面，对这个测试应用来说，仅仅显示了一个button.<br>点击button, 在ButtonTestUITest.m文件中当前光标定位处，出现了点击操作的录制代码<br><figure class="highlight obj-c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[[<span class="built_in">XCUIApplication</span> alloc] init].buttons[<span class="string">@"Button"</span>] tap];</span><br></pre></td></tr></table></figure></p>
+<p>看来录制功能用起来没什么问题，利用这个功能大大加快测试脚本的编写效率。<br>下次我们再来仔细看看 XCUIApplication，XCUIElement， XCUIElementQuery这几个类，以及XCTest中Assertion的部分。</p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/19/Test-With-Xcode-Part0/" itemprop="url">
                   Test With Xcode Part-0
                 </a>
@@ -579,7 +717,7 @@ you&apos;ve got to put paragraph tags in your blockquotes:&lt;/p&gt;
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

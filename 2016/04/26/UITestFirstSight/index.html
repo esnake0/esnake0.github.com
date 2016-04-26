@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Markdown,Basic," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -80,25 +80,28 @@
 
 
 
-<meta name="description" content="Markdown语言的基础学习笔记。
-原文链接
-Markdown这个词有两个概念：1.一种格式化纯文本的语言.2.一个软件工具，由Perl实现，将纯文本转化为HTML.//Dingus 这个web 应用可以让你键入自己的Markdown格式文本，将其翻译为XHTML
-段落，标题，引用段落只是简单的由1行或多行连贯文本组成，被一个或多个空行分隔。空行可包含空格和tabs, 通常段落不应被空格或tab">
+<meta name="description" content="测试让你能够定位并和应用的用户界面交互，以验证UI元素的属性和状态。
+UI测试包括UI录制，能够生成代码，像实际操作的那样去操作应用的界面元素，这些代码也可以扩展实现成为真正的UI测试.
+UI测试基于两项核心技术： XCTest框架和Accessibility
+
+XCTest 提供了一个集成在XCode内的UI测试框架， 创建和使用UI测试与使用XCTest进行单元测试的流程类似。创建一个UI">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Markdown Basics">
-<meta property="og:url" content="http://yoursite.com/2016/04/18/Markdown-0/index.html">
+<meta property="og:title" content="Test With Xcode Part-1:UI Test First Sight">
+<meta property="og:url" content="http://yoursite.com/2016/04/26/UITestFirstSight/index.html">
 <meta property="og:site_name" content="Universe Of Esnake0">
-<meta property="og:description" content="Markdown语言的基础学习笔记。
-原文链接
-Markdown这个词有两个概念：1.一种格式化纯文本的语言.2.一个软件工具，由Perl实现，将纯文本转化为HTML.//Dingus 这个web 应用可以让你键入自己的Markdown格式文本，将其翻译为XHTML
-段落，标题，引用段落只是简单的由1行或多行连贯文本组成，被一个或多个空行分隔。空行可包含空格和tabs, 通常段落不应被空格或tab">
-<meta property="og:updated_time" content="2016-04-18T09:46:26.000Z">
+<meta property="og:description" content="测试让你能够定位并和应用的用户界面交互，以验证UI元素的属性和状态。
+UI测试包括UI录制，能够生成代码，像实际操作的那样去操作应用的界面元素，这些代码也可以扩展实现成为真正的UI测试.
+UI测试基于两项核心技术： XCTest框架和Accessibility
+
+XCTest 提供了一个集成在XCode内的UI测试框架， 创建和使用UI测试与使用XCTest进行单元测试的流程类似。创建一个UI">
+<meta property="og:updated_time" content="2016-04-26T07:35:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Markdown Basics">
-<meta name="twitter:description" content="Markdown语言的基础学习笔记。
-原文链接
-Markdown这个词有两个概念：1.一种格式化纯文本的语言.2.一个软件工具，由Perl实现，将纯文本转化为HTML.//Dingus 这个web 应用可以让你键入自己的Markdown格式文本，将其翻译为XHTML
-段落，标题，引用段落只是简单的由1行或多行连贯文本组成，被一个或多个空行分隔。空行可包含空格和tabs, 通常段落不应被空格或tab">
+<meta name="twitter:title" content="Test With Xcode Part-1:UI Test First Sight">
+<meta name="twitter:description" content="测试让你能够定位并和应用的用户界面交互，以验证UI元素的属性和状态。
+UI测试包括UI录制，能够生成代码，像实际操作的那样去操作应用的界面元素，这些代码也可以扩展实现成为真正的UI测试.
+UI测试基于两项核心技术： XCTest框架和Accessibility
+
+XCTest 提供了一个集成在XCode内的UI测试框架， 创建和使用UI测试与使用XCTest进行单元测试的流程类似。创建一个UI">
 
 
 
@@ -116,7 +119,7 @@ Markdown这个词有两个概念：1.一种格式化纯文本的语言.2.一个�
   };
 </script>
 
-  <title> Markdown Basics | Universe Of Esnake0 </title>
+  <title> Test With Xcode Part-1:UI Test First Sight | Universe Of Esnake0 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -236,7 +239,7 @@ Markdown这个词有两个概念：1.一种格式化纯文本的语言.2.一个�
             
             
               
-                Markdown Basics
+                Test With Xcode Part-1:UI Test First Sight
               
             
           </h1>
@@ -248,8 +251,8 @@ Markdown这个词有两个概念：1.一种格式化纯文本的语言.2.一个�
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-18T11:51:19+08:00" content="2016-04-18">
-              2016-04-18
+            <time itemprop="dateCreated" datetime="2016-04-26T11:46:39+08:00" content="2016-04-26">
+              2016-04-26
             </time>
           </span>
 
@@ -259,8 +262,8 @@ Markdown这个词有两个概念：1.一种格式化纯文本的语言.2.一个�
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/18/Markdown-0/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/18/Markdown-0/" itemprop="commentsCount"></span>
+                <a href="/2016/04/26/UITestFirstSight/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/26/UITestFirstSight/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -283,122 +286,45 @@ Markdown这个词有两个概念：1.一种格式化纯文本的语言.2.一个�
       
 
       
-        <p>Markdown语言的基础学习笔记。</p>
-<p><a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">原文链接</a></p>
-<p>Markdown这个词有两个概念：<br>1.一种格式化纯文本的语言.<br>2.一个软件工具，由Perl实现，将纯文本转化为HTML.<br>//Dingus 这个web 应用可以让你键入自己的Markdown格式文本，将其翻译为XHTML</p>
-<h1 id="段落，标题，引用"><a href="#段落，标题，引用" class="headerlink" title="段落，标题，引用"></a>段落，标题，引用</h1><p>段落只是简单的由1行或多行连贯文本组成，被一个或多个空行分隔。空行可包含空格和tabs, 通常段落不应被空格或tabs缩进.</p>
-<p>Markdown 提供两种风格的标题：Setext和atx.</p>
-<p>Setext风格的标题<code>&lt;h1&gt;</code>和&lt;<code>&lt;h2&gt;</code>分别由=和短横线-在文本下划实现。</p>
-<p>例如</p>
-<pre><code>A First Level Header
-====================
-A Seconde Level Header
-----------------------
-</code></pre><p>效果为：</p>
-<h1 id="A-First-Level-Header"><a href="#A-First-Level-Header" class="headerlink" title="A First Level Header"></a>A First Level Header</h1><h2 id="A-Seconde-Level-Header"><a href="#A-Seconde-Level-Header" class="headerlink" title="A Seconde Level Header"></a>A Seconde Level Header</h2><p>atx风格的标题由在行前添加1-6个#来实现，#的个数代表了HTML结果中标题的层级</p>
-<pre><code>### Header 3
-</code></pre><p>显示效果为</p>
-<h3 id="Header-3"><a href="#Header-3" class="headerlink" title="Header 3"></a>Header 3</h3><h1 id="斜体和加粗"><a href="#斜体和加粗" class="headerlink" title="斜体和加粗"></a>斜体和加粗</h1><p>Markdown使用星号和下划线来标注强调<br>Markdown:</p>
-<pre><code>Some of these words *are emphasized*.
-Some of these words _are emphasized also_.
-
-Use two asterisks for **strong emphasis**.
-Or, if you prefer, __use two underscores instead__.
-</code></pre><p>Output:</p>
-<pre><code>&lt;p&gt;Some of these words &lt;em&gt;are emphasized&lt;/em&gt;.
-Some of these words &lt;em&gt;are emphasized also&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Use two asterisks for &lt;strong&gt;strong emphasis&lt;/strong&gt;.
-Or, if you prefer, &lt;strong&gt;use two underscores instead&lt;/strong&gt;.&lt;/p&gt;
-</code></pre><h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><p>无序列表使用<code>* + -</code>来标注</p>
-<pre><code>*Candy.
-*Gum.
-*Booze.
-</code></pre><p>和</p>
-<pre><code>+Candy.
-+Gum.
-+Booze.
-</code></pre><p>和</p>
-<pre><code>-Candy.
--Gum.
--Booze.
-</code></pre><p>输出一样的结果：</p>
-<p>Candy.<br>Gum.<br>Booze.</p>
-<p>有序列表使用数字和.作为标识</p>
-<pre><code>1.Red
-2.Green
-3.Blue
-</code></pre><p>输出:</p>
+        <p> 测试让你能够定位并和应用的用户界面交互，以验证UI元素的属性和状态。</p>
+<p>UI测试包括UI录制，能够生成代码，像实际操作的那样去操作应用的界面元素，这些代码也可以扩展实现成为真正的UI测试.</p>
+<p>UI测试基于两项核心技术： XCTest框架和Accessibility</p>
+<ul>
+<li><p>XCTest 提供了一个集成在XCode内的UI测试框架， 创建和使用UI测试与使用XCTest进行单元测试的流程类似。创建一个UI test target, 创建一个UI test classes和UI test methods作为项目的一部分。使用XCTest断言来验证期望的输出是否正确。也可通过Xcode server和xocdebuild来实现持续集成。XCTest同时兼容Obe-c和Swift.</p>
+</li>
+<li><p>Accessibility作为一项核心技术，可以让残疾用户在iOS和OS X系统上得到和其他用户同样丰富的体验。它包括一套关于UI的丰富的语义数据集（rich sef of semantic data)，可用于在应用中引导用户。Accessibility在UIKit 和AppKit中都集成了，并且包含了供外部调用的API. UI test使用这些数据来实现功能。</p>
+</li>
+</ul>
+<p>UI测试通过查询找到应用的UI对象，生成事件并将事件发送给UI对象，并且提供了一套丰富的API用于检查UI对象属性和状态。</p>
+<p>Requirements</p>
+<ul>
+<li>Xcode 7</li>
+<li>OS X 10.11 EI Capitan or later</li>
+<li>iOS 设备的开发者功能已启用并连接到一个可信任的主机</li>
+<li>OS X 需要授权一个特别的 Xcode Helper app, 这会在你首次使用UI test的时候自动弹出</li>
+</ul>
+<p>APIs</p>
+<ul>
+<li>XCUIApplication</li>
+<li>XCUIElement</li>
+<li>XCUIElementQuery</li>
+</ul>
+<p>UI测试包括几个基本步骤：</p>
 <ol>
-<li>Red</li>
-<li>Green</li>
-<li>Blue</li>
+<li>查询找到UI元素</li>
+<li>了解这个元素的期望行为</li>
+<li>对元素进行操作以获取响应</li>
+<li>判断响应是否符合期望结果， 测试pass/fail</li>
 </ol>
-<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p>Markdown支持两种创建链接的方式：inline和reference<br>Inline </p>
-<pre><code>This is an [example link](http://example.com/).
-Output:
+<p>以上是Apple<a href="https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/testing_with_xcode/RevisionHistory.html#//apple_ref/doc/uid/TP40014132-CH12-SW1" target="_blank" rel="external">官方文档</a>中关于使用XCT进行UI测试的所有内容了(截止本文发布时，官方文档最近更新时间为2016-03-21, Updated for Xcode 7.3.)</p>
+<p>尝试查找API手册，结果是这样的发现相关类的说明文档缺失，链接为灰色</p>
+<p>没办法，那就直接从Xcode中去实际用用看.</p>
+<p>在Xcode里面新建一个工程ButtonTest，选择Single View Application, 创建的同时勾选上Include UI Test<br>完成创建后，在Project Navigator里面是这样的：</p>
+<p>然后我们在Main.storyboard里面添加一个button, 并不用实现任何代码，可直接编译通过。<br>为了避免自动布局带来的问题，直接把storyboard中设置为使用4.7寸屏，模拟器也使用iPhone5s。<br>然后在Test Navigator中，直接运行ButtonTestUITest, 测试结果为PASS（因为还未实现任何测试）</p>
+<p>来仔细看看示例测试代码</p>
+<p>按照官方文档所推荐的那样，我们来试试点击开始使用录制功能。<br>点击录制后，模拟器启动，进入应用主界面，对这个测试应用来说，仅仅显示了一个button.<br>点击button, 在ButtonTestUITest.m文件中当前光标定位处，出现了点击操作的录制代码<br><figure class="highlight obj-c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[[<span class="built_in">XCUIApplication</span> alloc] init].buttons[<span class="string">@"Button"</span>] tap];</span><br></pre></td></tr></table></figure></p>
+<p>看来录制功能用起来没什么问题，利用这个功能大大加快测试脚本的编写效率。<br>下次我们再来仔细看看 XCUIApplication，XCUIElement， XCUIElementQuery这几个类，以及XCTest中Assertion的部分。</p>
 
-&lt;p&gt;This is an &lt;a href=&quot;http://example.com/&quot;&gt;
-example link&lt;/a&gt;.&lt;/p&gt;
-</code></pre><p>可选的，你也可以在括号内加入标题属性</p>
-<pre><code>This is an [example link](http://example.com/ &quot;With a Title&quot;).
-</code></pre><p>输出:</p>
-<pre><code>&lt;p&gt;This is an &lt;a href=&quot;http://example.com/&quot; title=&quot;With a Title&quot;&gt;
-example link&lt;/a&gt;.&lt;/p&gt;
-</code></pre><p>Reference风格的链接允许你通过名称来引用你的链接，只要在文档的其他地方定义就行。</p>
-<pre><code>I get 10 times more traffic from [Google][1] than from
-[Yahoo][2] or [MSN][3].
-
-[1]: http://google.com/        &quot;Google&quot;
-[2]: http://search.yahoo.com/  &quot;Yahoo Search&quot;
-[3]: http://search.msn.com/    &quot;MSN Search&quot;
-</code></pre><p>输出:</p>
-<pre><code>&lt;p&gt;I get 10 times more traffic from &lt;a href=&quot;http://google.com/&quot;
-title=&quot;Google&quot;&gt;Google&lt;/a&gt; than from &lt;a href=&quot;http://search.yahoo.com/&quot;
-title=&quot;Yahoo Search&quot;&gt;Yahoo&lt;/a&gt; or &lt;a href=&quot;http://search.msn.com/&quot;
-title=&quot;MSN Search&quot;&gt;MSN&lt;/a&gt;.&lt;/p&gt;
-</code></pre><p>标题属性是可选的，链接可包含字母，数字和空格，大小写不敏感</p>
-<pre><code>I start my morning with a cup of coffee and
-[The New York Times][NY Times].
-[ny times]: http://www.nytimes.com/
-</code></pre><p>Output:</p>
-<pre><code>&lt;p&gt;I start my morning with a cup of coffee and
-&lt;a href=&quot;http://www.nytimes.com/&quot;&gt;The New York Times&lt;/a&gt;.&lt;/p&gt;
-</code></pre><h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><p>图片语法类似于链接<br>Inline-style(title可选）：</p>
-<pre><code>![alt text](/path/to/img.jpg &quot;Title&quot;)
-</code></pre><p>Reference-style:</p>
-<pre><code>![alt text][id]
-[id]: /path/to/img.jpg &quot;Title&quot;
-</code></pre><p>以上两个例子生成同样的输出：</p>
-<pre><code>&lt;img src=&quot;/path/to/img.jpg&quot; alt=&quot;alt text&quot; title=&quot;Title&quot; /&gt;
-</code></pre><p>代码<br>在普通段落中，可用反引号包裹住代码引用。&amp;, &lt;和&gt;会自动转义成HTML实体。</p>
-<pre><code>I strongly recommend against using any `&lt;blink&gt;` tags.
-I wish SmartyPants used named entities like `&amp;mdash;`
-instead of decimal-encoded entites like `&amp;#8212;`.
-</code></pre><p>Output:</p>
-<pre><code>&lt;p&gt;I strongly recommend against using any
-
-&lt;code&gt;&amp;lt;blink&amp;gt;&lt;/code&gt; tags.&lt;/p&gt;
-
-&lt;p&gt;I wish SmartyPants used named entities like
-&lt;code&gt;&amp;amp;mdash;&lt;/code&gt; instead of decimal-encoded
-entites like &lt;code&gt;&amp;amp;#8212;&lt;/code&gt;.&lt;/p&gt;
-</code></pre><p>如果需要列举一整块预格式过的代码，将每行进行4个空格的缩进(一个tab)</p>
-<p>Markdown:</p>
-<pre><code>If you want your page to validate under XHTML 1.0 Strict,
-you&apos;ve got to put paragraph tags in your blockquotes:
-    &lt;blockquote&gt;
-    &lt;p&gt;For example.&lt;/p&gt;
-    &lt;/blockquote&gt;
-</code></pre><p>Output:</p>
-<pre><code>&lt;p&gt;If you want your page to validate under XHTML 1.0 Strict,
-you&apos;ve got to put paragraph tags in your blockquotes:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;blockquote&amp;gt;
-    &amp;lt;p&amp;gt;For example.&amp;lt;/p&amp;gt;
-&amp;lt;/blockquote&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-</code></pre>
       
     </div>
     
@@ -416,26 +342,18 @@ you&apos;ve got to put paragraph tags in your blockquotes:&lt;/p&gt;
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Markdown/" rel="tag">#Markdown</a>
-          
-            <a href="/tags/Basic/" rel="tag">#Basic</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/04/19/Test-With-Xcode-Part0/" rel="next" title="Test With Xcode Part-0">
+                <i class="fa fa-chevron-left"></i> Test With Xcode Part-0
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/19/Test-With-Xcode-Part0/" rel="prev" title="Test With Xcode Part-0">
-                Test With Xcode Part-0 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -484,8 +402,8 @@ you&apos;ve got to put paragraph tags in your blockquotes:&lt;/p&gt;
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/18/Markdown-0/"
-           data-title="Markdown Basics" data-url="http://yoursite.com/2016/04/18/Markdown-0/">
+      <div class="ds-thread" data-thread-key="2016/04/26/UITestFirstSight/"
+           data-title="Test With Xcode Part-1:UI Test First Sight" data-url="http://yoursite.com/2016/04/26/UITestFirstSight/">
       </div>
     
   </div>
@@ -602,7 +520,7 @@ you&apos;ve got to put paragraph tags in your blockquotes:&lt;/p&gt;
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#段落，标题，引用"><span class="nav-number">1.</span> <span class="nav-text">段落，标题，引用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#A-First-Level-Header"><span class="nav-number">2.</span> <span class="nav-text">A First Level Header</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-Seconde-Level-Header"><span class="nav-number">2.1.</span> <span class="nav-text">A Seconde Level Header</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Header-3"><span class="nav-number">2.1.1.</span> <span class="nav-text">Header 3</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#斜体和加粗"><span class="nav-number">3.</span> <span class="nav-text">斜体和加粗</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#列表"><span class="nav-number">4.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链接"><span class="nav-number">5.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图片"><span class="nav-number">6.</span> <span class="nav-text">图片</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
